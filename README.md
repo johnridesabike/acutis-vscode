@@ -8,7 +8,7 @@ This is the VS Code extension for the [Acutis language].
 
 This extension provides syntax highlighting for `.acutis` files.
 
-![Syntax highlighting example.](screenshot.png)
+![Syntax highlighting example.](https://raw.githubusercontent.com/johnridesabike/acutis-vscode/master/screenshot.png)
 
 ## Limitations
 
