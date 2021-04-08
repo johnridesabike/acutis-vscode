@@ -1,0 +1,42 @@
+{
+  "name": "acutis-vscode",
+  "displayName": "Acutis language",
+  "description": "Syntax highlighting for the Acutis language.",
+  "publisher": "jbpjackson",
+  "version": "0.1.0",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/johnridesabike/acutis-vscode.git "
+  },
+  "homepage": "https://github.com/johnridesabike/acutis-vscode",
+  "engines": {
+    "vscode": "^1.55.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "icon": "icon.png",
+  "contributes": {
+    "languages": [
+      {
+        "id": "acutis",
+        "aliases": [
+          "Acutis",
+          "acutis"
+        ],
+        "extensions": [
+          ".acutis"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "acutis",
+        "scopeName": "source.acutis",
+        "path": "./acutis.tmLanguage.json"
+      }
+    ]
+  }
+}

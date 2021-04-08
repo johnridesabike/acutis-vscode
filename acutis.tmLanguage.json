@@ -1,0 +1,139 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Acutis",
+  "patterns": [
+    { "include": "#echo" },
+    { "include": "#expression" },
+    { "include": "#comment" },
+    { "include": "#frontMatter" },
+    { "include": "text.html.basic" }
+  ],
+  "scopeName": "source.acutis",
+  "repository": {
+    "echo": {
+      "name": "punctuation.tag.acutis",
+      "begin": "({{)(~)?",
+      "beginCaptures": {
+        "1": { "name": "punctuation.definition.tag.begin.acutis" },
+        "2": { "name": "keyword.operator.tilde.acutis" }
+      },
+      "end": "(~)?(}})",
+      "endCaptures": {
+        "1": { "name": "keyword.operator.tilde.acutis" },
+        "2": { "name": "punctuation.definition.tag.end.acutis" }
+      },
+      "patterns": [{ "include": "#expression-patterns" }]
+    },
+    "expression": {
+      "name": "punctuation.tag.acutis",
+      "begin": "({%)(~)?",
+      "beginCaptures": {
+        "1": { "name": "punctuation.definition.tag.begin.acutis" },
+        "2": { "name": "keyword.operator.tilde.acutis" }
+      },
+      "end": "(~)?(%})",
+      "endCaptures": {
+        "1": { "name": "keyword.operator.tilde.acutis" },
+        "2": { "name": "punctuation.definition.tag.end.acutis" }
+      },
+      "patterns": [{ "include": "#expression-patterns" }]
+    },
+    "expression-patterns": {
+      "patterns": [
+        {
+          "match": "\\b(false|true|null)\\b",
+          "name": "constant.language.acutis"
+        },
+        {
+          "match": "([A-Z])([a-zA-Z0-9_]+)?",
+          "name": "entity.name.tag.acutis"
+        },
+        {
+          "match": "\\b(map|match|with)\\b",
+          "name": "entity.name.function.acutis"
+        },
+        {
+          "match": "(-|\\+)?\\s*[0-9]+(\\.[0-9]+)?(e|E)?",
+          "name": "constant.numeric.acutis"
+        },
+        {
+          "begin": "\"",
+          "end": "\"",
+          "name": "string.quoted.double.acutis",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.definition.string.begin"
+            }
+          },
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.definition.string.end"
+            }
+          },
+          "patterns": [
+            {
+              "match": "\\\\.",
+              "name": "constant.character.escape.acutis"
+            }
+          ]
+        },
+        {
+          "match": "([a-z_])([a-zA-Z0-9_]+)?",
+          "name": "constant.character.acutis"
+        },
+        {
+          "match": "&|\\?|#",
+          "name": "keyword.operator.acutis"
+        },
+        {
+          "match": "/",
+          "name": "punctuation.definition.tag.end.acutis"
+        },
+        {
+          "match": "=",
+          "name": "punctuation.separator.equal.acutis"
+        },
+        {
+          "match": ",",
+          "name": "punctuation.separator.comma.acutis"
+        },
+        {
+          "match": "\\[",
+          "name": "punctuation.section.brackets.begin.acutis"
+        },
+        {
+          "match": "\\]",
+          "name": "punctuation.section.brackets.end.acutis"
+        },
+        {
+          "match": "{",
+          "name": "punctuation.section.braces.begin.acutis"
+        },
+        {
+          "match": "}",
+          "name": "punctuation.section.braces.end.acutis"
+        },
+        {
+          "match": ":",
+          "name": "punctuation.separator.colon.acutis"
+        },
+        {
+          "match": "\\.\\.\\.",
+          "name": "keyword.operator.spread.acutis"
+        }
+      ]
+    },
+    "comment": {
+      "name": "comment.block.acutis",
+      "begin": "{\\*",
+      "end": "\\*}",
+      "patterns": [{ "include": "#comment" }]
+    },
+    "frontMatter": {
+      "begin": "\\A-{3}\\s*$",
+      "contentName": "meta.embedded.block.frontmatter",
+      "patterns": [{ "include": "source.yaml" }],
+      "end": "(^|\\G)-{3}|\\.{3}\\s*$"
+    }
+  }
+}

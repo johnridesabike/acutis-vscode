@@ -1,0 +1,22 @@
+{% Abc d e=#%} {{ "f" }} {%/# /%}
+{% match g with {h: true, i: ["j"], k} %}
+  {{ k }}
+{% with {h: false, l: ["m", ...rest]} %}
+  {%~ map rest
+     with {n, o}, 0 ~%}
+    First {{ n }} {{ o }}
+    {% with {n, o}, index %}
+    {{ index }} {{ n }} {{ o }}
+  {%~ /map ~%}
+{% /match %}
+{{~ -1.5e ~}}
+{ p %
+{* " \\\\ *}
+{* nested {* comment *} *}
+<span class="lol">lol</span>
+{{ " \ " }}
+{{ " \" " }}
+{{  a
+}}
+{* {q*r *}
+{{ &a ? S }}
