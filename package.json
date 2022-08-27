@@ -3,8 +3,8 @@
   "displayName": "Acutis language",
   "description": "Syntax highlighting for the Acutis language.",
   "publisher": "jbpjackson",
-  "version": "0.1.0",
-  "license": "Apache-2.0",
+  "version": "0.2.0",
+  "license": "MPL-2.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/johnridesabike/acutis-vscode.git "
